@@ -7,7 +7,7 @@ Alternatively, you can skip the app creation steps and deploy the app under the 
 
 1. Open a terminal and create a folder for your app using `mkdir my-first-app`. Then, navigate to that folder via `cd my-first-app`.
 
-1. Initialize npm on the folder by running `npm init`. Answer the questions (or press enter), [npm](https://docs.npmjs.com/cli/init) will use that information to create a `package.json` file for you.
+1. Initialize npm on the folder by running `npm init`. Answer the prompted questions (or press enter), but make sure you set up `app.js` as your main app. [npm](https://docs.npmjs.com/cli/init) will use that information to create a `package.json` file for you.
 
 1. Now you are ready to create your Node.js app! For this, create a file named **app.js** by entering `touch app.js` (or `echo.>app.js` if you are on Windows).
 
@@ -22,9 +22,9 @@ var app = http.createServer(function (request, response) {
   response.end();
 });
 
-app.listen(8000);
+app.listen(process.env.PORT || 8000);
 
-console.log('Server running at http://127.0.0.1:8000/');
+console.log('Server running at http://127.0.0.1:' + process.env.PORT);
 ```
 
 > **Note:** this code will, when executed, create a basic Node.js server that will answer 'Hola FIUBA' to every request made to the localhost (your machine) port 8000.
@@ -57,9 +57,9 @@ var app = http.createServer(function (request, response) {
   response.end();
 });
 
-app.listen(8000);
+app.listen(process.env.PORT || 8000);
 
-console.log('Server running at http://127.0.0.1:8000/');
+console.log('Server running at http://127.0.0.1:' + process.env.PORT);
 ```
 
 Run the app again with `node app.js`. Now your app should be returning the value retrieved by the package to the browser. Your only job was to orchestrate your server with the module's logic. In the next section, we will deploy our app to the cloud.
@@ -71,9 +71,29 @@ For this section we are going to use one of the following services:
 * [now]()
 * [Heroku](https://www.heroku.com/)
 
-But feel free to use whatever service you want.
+But feel free to use whatever service you want. Also, notice that you will need to update your `package.json` file, specifying how your app should start:
+
+```
+{
+  "name": "exercise-1",
+  ...
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  ...
+}
+```
+
 
 #### Deploy a node app in now.js
+
+> **Note:** you can find a more detailed step-by-step guide [here](https://zeit.co/now#get-started).
+
+1. Install now from npm with `npm install -g now`.
+
+1. To deploy with now, simply run `now`. The first time you run it it'll ask for your email to identify you.
+Click the email you receive, and you'll be automatically logged-in.
 
 #### Deploy a node app in Heroku
 
@@ -85,6 +105,10 @@ But feel free to use whatever service you want.
 
 1. Navigate to the folder of the app you want to deploy. To prepare Heroku to receive your source code, create an app on Heroku with `heroku create`. This will associate your code with a git remote called `heroku`.
 
+>**Note:** if the `heroku` git remote wasn't created automatically, you can do it manually via `git remote add heroku <your-heroku-git-remote-url>.git`.
+
 1. Now deploy your code with `git push heroku master`.
+
+1. The application is now deployed. Ensure that at least one instance of the app is running with `heroku ps:scale web=1`. Finally, navigate to the app with `heroku open`.
 
 ### Optional Section: push your code to GitHub
