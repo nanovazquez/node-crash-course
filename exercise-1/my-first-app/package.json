@@ -1,0 +1,27 @@
+{
+  "name": "exercise-1",
+  "version": "1.0.0",
+  "description": "my first app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanovazquez/node-crash-course.git"
+  },
+  "keywords": [
+    "node-crash-course",
+    "node",
+    "app"
+  ],
+  "author": "nanovazquez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nanovazquez/node-crash-course/issues"
+  },
+  "homepage": "https://github.com/nanovazquez/node-crash-course#readme",
+  "dependencies": {
+    "sign-bunny": "^1.0.0"
+  }
+}
