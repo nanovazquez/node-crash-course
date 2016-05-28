@@ -112,3 +112,5 @@ Click the email you receive, and you'll be automatically logged-in.
 1. The application is now deployed. Ensure that at least one instance of the app is running with `heroku ps:scale web=1`. Finally, navigate to the app with `heroku open`.
 
 ### Optional Section: push your code to GitHub
+
+[GitHub](https://github.com/) is a web-based Git repository hosting service. Is basically a code sharing and publishing service, but it's also a social networking site for programmers, and a reeally good place to find JavaScript project. You should definitely give it a try and start sharing your own code there, it's a good moment to be part of the open source community :)
