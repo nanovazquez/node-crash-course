@@ -2,10 +2,10 @@
 
 This repository contains a set of short and simple exercises used in the node.js course of [FIUBA] (http://www.fi.uba.ar/) (Facultad de Ingeniería de la Universidad de Buenos Aires).
 
-### Exercises
+### Classes
 
-1. Exercise 1: Node.js introduction & ecosystem - Your first node deployment!
-2. TBD
+1. Class 1: Node.js introduction & ecosystem - Exercise: Your first node deployment!
+2. Class 2: Web app development - Exercise: Let's JS all the things!
 
 
 ### Basic Requirements
