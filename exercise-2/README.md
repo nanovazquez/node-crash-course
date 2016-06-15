@@ -25,43 +25,22 @@ Now, it's time to add some functionality to the app! For this, we will remove th
 
 1. Now, add the following line inside the `<head>` tag of the **index.html** file.
 
-```
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-```
+  ```
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  ```
 
 1. Create a file named `index.js` under the **public** folder and paste the content inside the `./assets/public/index.js` file.
 
 1. Now execute that code by using `node app.js`. Open a browser and navigate to http://127.0.0.1:8000/ to test it. You should see a better tinder-ish site in your browser.
 
-Voilà! Easy right? Let's analize what the app does:
+  *Voilà!* Easy right? Let's analize what the app does:
 
-1. We create a variable to store all the information of the people we are going to use.
-
-1. We initialize an `App` and `Phone` variables, with some actions, like **Yes** or **No**.
-
-1. We initialize the app inside the `$(document).ready()` function. Notice that we add randomly people to the deck.
+  * We create a variable to store all the information of the people we are going to use.
+  * We initialize an `App` and `Phone` variables, with some actions, like **Yes** or **No**.
+  * We initialize the app inside the `$(document).ready()` function. Notice that we add randomly people to the deck.
 
 ### Section 3: Get your data from an API
 
 TBC
 
-### Section 4: Deploy your app in the Cloud
 
-For this section we are going to use one of the following services:
-
-* [now](https://zeit.co/now)
-* [Heroku](https://www.heroku.com/)
-
-Notice that you will need to update your `package.json` file, specifying how your app should start:
-
-```
-{
-  "name": "exercise-1",
-  ...
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js"
-  },
-  ...
-}
-```

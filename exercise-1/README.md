@@ -22,9 +22,9 @@ Alternatively, you can skip the app creation steps and deploy the app under the 
     response.end();
   });
 
-  app.listen(process.env.PORT || 8000);
-
-  console.log('Server running at http://127.0.0.1:' + process.env.PORT);
+  var port = process.env.PORT || 8000;
+  app.listen(port);
+  console.log('Server running at http://127.0.0.1:' + port);
   ```
 
   > **Note:** this code will, when executed, create a basic Node.js server that will answer 'Hola FIUBA' to every request made to the localhost (your machine) port 8000.
@@ -57,9 +57,9 @@ Let's use a simple package to improve our newly created server a little bit.
     response.end();
   });
 
-  app.listen(process.env.PORT || 8000);
-
-  console.log('Server running at http://127.0.0.1:' + process.env.PORT);
+  var port = process.env.PORT || 8000;
+  app.listen(port);
+  console.log('Server running at http://127.0.0.1:' + port);
   ```
 
 Run the app again with `node app.js`. Now your app should be returning the value retrieved by the package to the browser. Your only job was to orchestrate your server with the module's logic. In the next section, we will deploy our app to the cloud.
