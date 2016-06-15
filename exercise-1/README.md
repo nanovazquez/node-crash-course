@@ -13,21 +13,21 @@ Alternatively, you can skip the app creation steps and deploy the app under the 
 
 1. Then, open your file and add the following code:
 
-```
-var http = require('http');
+  ```
+  var http = require('http');
 
-var app = http.createServer(function (request, response) {
-  response.writeHead(200, {'Content-Type': 'text/plain'});
-  response.write('Hola FIUBA!');
-  response.end();
-});
+  var app = http.createServer(function (request, response) {
+    response.writeHead(200, {'Content-Type': 'text/plain'});
+    response.write('Hola FIUBA!');
+    response.end();
+  });
 
-app.listen(process.env.PORT || 8000);
+  app.listen(process.env.PORT || 8000);
 
-console.log('Server running at http://127.0.0.1:' + process.env.PORT);
-```
+  console.log('Server running at http://127.0.0.1:' + process.env.PORT);
+  ```
 
-> **Note:** this code will, when executed, create a basic Node.js server that will answer 'Hola FIUBA' to every request made to the localhost (your machine) port 8000.
+  > **Note:** this code will, when executed, create a basic Node.js server that will answer 'Hola FIUBA' to every request made to the localhost (your machine) port 8000.
 
 1. Now execute that code by using `node app.js`. Open a browser and navigate to http://127.0.0.1:8000/ to test it. You should see the message sent via `response.write` in your browser.
 
@@ -39,28 +39,28 @@ Let's use a simple package to improve our newly created server a little bit.
 
 1. Add the [sign-bunny]() package in your app by running `npm install --save sign-bunny`. Notice that a **node_modules** folder will be created containing the package code.
 
-> **Note:** note that the code is also available in [GitHub](https://github.com/ryanbahniuk/sign-bunny).
+  > **Note:** note that the code is also available in [GitHub](https://github.com/ryanbahniuk/sign-bunny).
 
 1. Now, update your `app.js` code to use the package. There are 2 important parts you need to know for this:
-  1. You need to **require** the package so node can know that it needs to load it.
-  2. You need to use the package (or module) code in your app.
+  * You need to **require** the package so node can know that it needs to load it.
+  * You need to use the package (or module) code in your app.
 
-Simple, right? Let's do it:
+  Simple, right? Let's do it:
 
-```
-var http = require('http');
-var signBunny = require('sign-bunny');
+  ```
+  var http = require('http');
+  var signBunny = require('sign-bunny');
 
-var app = http.createServer(function (request, response) {
-  response.writeHead(200, {'Content-Type': 'text/plain; charset=utf-8'});
-  response.write(signBunny('Hola FIUBA!'));
-  response.end();
-});
+  var app = http.createServer(function (request, response) {
+    response.writeHead(200, {'Content-Type': 'text/plain; charset=utf-8'});
+    response.write(signBunny('Hola FIUBA!'));
+    response.end();
+  });
 
-app.listen(process.env.PORT || 8000);
+  app.listen(process.env.PORT || 8000);
 
-console.log('Server running at http://127.0.0.1:' + process.env.PORT);
-```
+  console.log('Server running at http://127.0.0.1:' + process.env.PORT);
+  ```
 
 Run the app again with `node app.js`. Now your app should be returning the value retrieved by the package to the browser. Your only job was to orchestrate your server with the module's logic. In the next section, we will deploy our app to the cloud.
 
@@ -68,7 +68,7 @@ Run the app again with `node app.js`. Now your app should be returning the value
 
 For this section we are going to use one of the following services:
 
-* [now]()
+* [now](https://zeit.co/now)
 * [Heroku](https://www.heroku.com/)
 
 But feel free to use whatever service you want. Also, notice that you will need to update your `package.json` file, specifying how your app should start:
@@ -105,7 +105,7 @@ Click the email you receive, and you'll be automatically logged-in.
 
 1. Navigate to the folder of the app you want to deploy. To prepare Heroku to receive your source code, create an app on Heroku with `heroku create`. This will associate your code with a git remote called `heroku`.
 
->**Note:** if the `heroku` git remote wasn't created automatically, you can do it manually via `git remote add heroku <your-heroku-git-remote-url>.git`.
+  >**Note:** if the `heroku` git remote wasn't created automatically, you can do it manually via `git remote add heroku <your-heroku-git-remote-url>.git`.
 
 1. Now deploy your code with `git push heroku master`.
 
