@@ -1,6 +1,7 @@
 # Node.js crash-course
 
-This repository contains a set of short and simple exercises used in the node.js course of [FIUBA] (http://www.fi.uba.ar/) (Facultad de Ingeniería de la Universidad de Buenos Aires).
+This repository contains a set of short and simple exercises used in the [Node.js](https://nodejs.org/en/) course of the [FIUBA] (http://www.fi.uba.ar/) (Facultad de Ingeniería de la Universidad de Buenos Aires).
+
 
 ### Classes
 
@@ -13,3 +14,10 @@ This repository contains a set of short and simple exercises used in the node.js
 * [Node.js](https://nodejs.org/en/) installed in your machine.
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed in your machine.
 * A [GitHub](https://github.com/) account.
+
+
+## Getting started
+
+1. Open the `exercise-1/README.md` file.
+2. Follow the steps.
+3. Enjoy.
