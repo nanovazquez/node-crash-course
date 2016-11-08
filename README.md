@@ -18,6 +18,6 @@ This repository contains a set of short and simple exercises used in the [Node.j
 
 ## Getting started
 
-1. Open the `exercise-1/README.md` file.
+1. Open the **exercise-1/README.md** file.
 2. Follow the steps.
 3. Enjoy.

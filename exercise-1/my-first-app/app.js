@@ -1,10 +1,10 @@
-var http = require('http');
-var signBunny = require('sign-bunny');
+var express = require('express');
+var app = express();
 
-var app = http.createServer(function (request, response) {
-  response.writeHead(200, {'Content-Type': 'text/plain; charset=utf-8'});
-  response.write(signBunny('Hola FIUBA!'));
-  response.end();
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function(req, res){
+  res.sendfile(__dirname + 'public/index.html');
 });
 
 var port = process.env.PORT || 8000;

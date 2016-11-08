@@ -1,17 +1,17 @@
-# Class 1: Node.js introduction & ecosystem - Exercise: Your first node deployment!
+# Clase 1: Introducción a Node.js y su ecosystem - Ejercicio: Tu primer deployment de Node!
 
-Follow these instructions to create your first node app step by step and deploy it to the cloud.
-Alternatively, you can skip the app creation steps and deploy the app under the `my-first-app` folder and go directly to the deployment section.
+Bienvenido! En esta clase, aprenderemos a crear nuestra primer applicacion node siguiendo una serie de pasos sencillos.
+Si estás familiarizado con node, puedes omitir la primer sección y deployar la applicación que se encuentra en la carpeta `my-first-app`.
 
-### Section 1: Your fist node app
+### Sección 1: Tu primer app de node
 
-1. Open a terminal and create a folder for your app using `mkdir my-first-app`. Then, navigate to that folder via `cd my-first-app`.
+1. Abrimos una terminal/consola y crea una carpeta para tu aplicación usando el comando `mkdir my-first-app`. Luego, navegá a esa carpeta utilizando el comando `cd my-first-app`.
 
-1. Initialize npm on the folder by running `npm init`. Answer the prompted questions (or press enter), but make sure you set up `app.js` as your main app. [npm](https://docs.npmjs.com/cli/init) will use that information to create a `package.json` file for you.
+1. Inicialicemos el proyecto corriendo el comando `npm init`. Respondamos las preguntas que aparecen (o presioná _enter_ para utilizar el valor por defecto). Sólo debes asegurarte de escribir `app.js` como tu `main` app.[npm](https://docs.npmjs.com/cli/init) will va a utilizar la información suministrada para crear el archivo `package.json` por vos.
 
-1. Now you are ready to create your Node.js app! For this, create a file named **app.js** by entering `touch app.js` (or `echo.>app.js` if you are on Windows).
+1. Ahora si estamos en condiciones de crear la app de Node.js! Para ello, crearemos un archivo llamando **app.js** usando el comando `touch app.js` (o `echo.>app.js` si estás en Windows).
 
-1. Then, open your file and add the following code:
+1. Luego, abrimos el archivo y agregamos el siguiente código:
 
   ```
   var http = require('http');
@@ -27,25 +27,26 @@ Alternatively, you can skip the app creation steps and deploy the app under the 
   console.log('Server running at http://127.0.0.1:' + port);
   ```
 
-  > **Note:** this code will, when executed, create a basic Node.js server that will answer 'Hola FIUBA' to every request made to the localhost (your machine) port 8000.
+  > **Note:** este código se ocupará, al ser ejecutado, de crear una aplicación Node.js básica que va a responder con el texto 'Hola FIUBA' a cada petición (request) recibida en localhost (o 127.0.0.1, o tu máquina), puerto 8000.
 
-1. Now execute that code by using `node app.js`. Open a browser and navigate to http://127.0.0.1:8000/ to test it. You should see the message sent via `response.write` in your browser.
+1. Ahora, ejecutamos el código en nuestra terminal corriendo el comando `node app.js`. Luego, abrimos un navegador (Chrome por ejemplo) y navegamos a la dirección http://127.0.0.1:8000. Si todo esta bien, debemos ver el mensaje `Hola FIUBA!`, el cual fue enviado por nuestra app de Node.js al navegador.
 
-#### Introducing NPM
+#### Introducción a NPM
 
-One of the most useful tools we have in the JavaScript world is [npm](https://www.npmjs.com/), the package manager for JS code. You can use it to reuse code created by the community, by downloading ~250.000 packages of working code. Every piece of code that can be reused across different applications, *should* be distributed as an npm package.
+Una de las herramientas más útiles que tenemos en el mundo de JavaScript es [NPM](https://www.npmjs.com/), el administrador de paquetes para el ecosistema de JavaScript. Los desarrolladores usamos esta tool para descargar alrededor de 350.000 librerías y reusar código funcional creado por la comunidad de desarrolladores. Cualquier porción de código que puede reutilizarse en otras aplicaciones *puede* ser distribuida como un paquete de NPM.
 
-Let's use a simple package to improve our newly created server a little bit.
+Instalemos un paquete sencillo para mejorar un poco a nuestro server:
 
-1. Add the [sign-bunny]() package in your app by running `npm install --save sign-bunny`. Notice that a **node_modules** folder will be created containing the package code.
+1. Agreguemos el paquete [sign-bunny](https://github.com/ryanbahniuk/sign-bunny) en nuestra app con el comando `npm install --save sign-bunny`. Notar que la carpeta **node_modules** se va a crear, la cual va a contener el código del paquete.
 
-  > **Note:** note that the code is also available in [GitHub](https://github.com/ryanbahniuk/sign-bunny).
+  > **Note:** el código también está disponible en [GitHub](https://github.com/ryanbahniuk/sign-bunny).
 
-1. Now, update your `app.js` code to use the package. There are 2 important parts you need to know for this:
-  * You need to **require** the package so node can know that it needs to load it.
-  * You need to use the package (or module) code in your app.
+1. Ahora, actualicemos el archivo `app.js` y usemos el paquete. Hay 2 pasos importantes para ello:
 
-  Simple, right? Let's do it:
+  1. Tenes que requerir (**require**) el paquete para que Node sepa que tiene que cargar ese código.
+  2. Tenes que usar el código del paquete.
+
+  Simple, no? Hagámoslo:
 
   ```
   var http = require('http');
@@ -62,16 +63,18 @@ Let's use a simple package to improve our newly created server a little bit.
   console.log('Server running at http://127.0.0.1:' + port);
   ```
 
-Run the app again with `node app.js`. Now your app should be returning the value retrieved by the package to the browser. Your only job was to orchestrate your server with the module's logic. In the next section, we will deploy our app to the cloud.
+1. Ejecuta la aplicación nuevamente con `node app.js`. Ahora deberías ver que la app retorna algo diferente al navegador. Y tu único trabajo fue orquestrar en tu server el uso del módulo, no la implementación del código.
 
-### Section 2: Deploy your app in the Cloud
+En la próxima sección, publicaremos la aplicación en la nube.
 
-For this section we are going to use one of the following services:
+### Section 2: Publicar la aplicación en la nube.
+
+Para esta sección vamos a usar uno de los siguientes servicios de la nube:
 
 * [now](https://zeit.co/now)
 * [Heroku](https://www.heroku.com/)
 
-But feel free to use whatever service you want. Also, notice that you will need to update your `package.json` file, specifying how your app should start:
+Puedes utilizar cualquiera de ello. Pero ten en cuenta que vas a necesitar actualizar el archivo `package.json`, especificando cómo tu app debe comenzar (main y script `start`).
 
 ```
 {
@@ -85,32 +88,30 @@ But feel free to use whatever service you want. Also, notice that you will need 
 }
 ```
 
+#### Publicar una app de node in now.js
 
-#### Deploy a node app in now.js
+> **Note:** puedes encontrar una guía más detallada [aquí](https://zeit.co/now#get-started).
 
-> **Note:** you can find a more detailed step-by-step guide [here](https://zeit.co/now#get-started).
+1. Instala now desde npm con `npm install -g now`.
 
-1. Install now from npm with `npm install -g now`.
+1. Para deployar la app, sólo necesitas correr `now`. La primera vez te pedirá que te autentiques con tu mail. Luego, recibirás un email que te logueará automáticamente para permitirte publicar en el futuro.
 
-1. To deploy with now, simply run `now`. The first time you run it it'll ask for your email to identify you.
-Click the email you receive, and you'll be automatically logged-in.
+#### Publicar una app de node en Heroku
 
-#### Deploy a node app in Heroku
+> **Note:** puedes encontrar una guía más detallada [aqui](https://devcenter.heroku.com/articles/getting-started-with-nodejs).
 
-> **Note:** you can find a more detailed step-by-step guide [here](https://devcenter.heroku.com/articles/getting-started-with-nodejs).
+1. Instala el [Heroku toolbelt](https://toolbelt.heroku.com/), la herramienta CLI para crear y administrar applicaciones en Heroku.
 
-1. Install the [Heroku toolbelt](https://toolbelt.heroku.com/), the CLI tool for creating and managing Heroku apps.
+1. Una vez instalado, abre una terminal y logueate en Heroku con el siguiente comando: `heroku login`.
 
-1. Once installed, open a terminal and log in to Heroku with the following command: `heroku login`.
+1. Navega a la carpeta de la aplicación que quieres plubicar. Luego, crea una aplicación en Heroku con el comando `heroku create`. Esto asociará a tu código de git con un git remoto llamado `heroku`.
 
-1. Navigate to the folder of the app you want to deploy. To prepare Heroku to receive your source code, create an app on Heroku with `heroku create`. This will associate your code with a git remote called `heroku`.
+  >**Note:** Si el git remoto `heroku` no fue creado automáticamente, puedes hacerlo manualmente corriendo con `git remote add heroku <your-heroku-git-remote-url>.git`.
 
-  >**Note:** if the `heroku` git remote wasn't created automatically, you can do it manually via `git remote add heroku <your-heroku-git-remote-url>.git`.
+1. Ahora, publica tu código pusheando éste al remoto con `git push heroku master`.
 
-1. Now deploy your code with `git push heroku master`.
+1. La terminal comunicará que la aplicación fue publicada. Asegúrate que al menos una instancia de la aplicación está corriedo con el comando `heroku ps:scale web=1`. Finalmente, navega a la aplicación con `heroku open`.
 
-1. The application is now deployed. Ensure that at least one instance of the app is running with `heroku ps:scale web=1`. Finally, navigate to the app with `heroku open`.
+### Sección opcional: pushea tu código en GitHub
 
-### Optional Section: push your code to GitHub
-
-[GitHub](https://github.com/) is a web-based Git repository hosting service. Is basically a code sharing and publishing service, but it's also a social networking site for programmers, and a reeally good place to find JavaScript project. You should definitely give it a try and start sharing your own code there, it's a good moment to be part of the open source community :)
+[GitHub](https://github.com/) es un servicio web de hosteo de tu código, en base a un repositorio de Git. Es principalmente utilizado para compartir código y servicios, pero también es una red social para desarrolladores, además de ser un buen lugar para encontrar proyectos de JavaScript. Si es la primera vez que lo escuchas nombrar, definitivamente debes probarlo, por ejemplo al compartir el código que has creado este tutorial: es un buen momento para ser parte de la comunidad open source :)
