@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/nanovazquez/node-crash-course#readme",
   "dependencies": {
-    "express": "^4.13.4",
     "sign-bunny": "^1.0.0"
   }
 }

@@ -65,7 +65,9 @@ Instalemos un paquete sencillo para mejorar un poco a nuestro server:
   console.log('Server running at http://127.0.0.1:' + port);
   ```
 
-1. Ejecuta la aplicación nuevamente con `node app.js`. Ahora deberías ver que la app retorna algo diferente al navegador. Y tu único trabajo fue orquestrar en tu server el uso del módulo, no la implementación del código.
+1. Ejecuta la aplicación nuevamente con `node app.js`. Ahora deberías ver que la app retorna algo diferente al navegador.
+
+Esto que hicimos es un patrón común en el trabajo diario de un programador de JavaScript: para evitar tener que reinventar la rueda, uno puede usar librerías open-source creadas por otros programadores. En este caso, nuestro único trabajo fue llamar en tu server una librería (o módulo de NPM), no implementar el código de la función `signBunny`.
 
 En la próxima sección, publicaremos la aplicación en la nube.
 

@@ -65,7 +65,9 @@ Let's install a simple package to improve our newly created server a little bit.
   console.log('Server running at http://127.0.0.1:' + port);
   ```
 
-1. Run the app again with `node app.js`. Now your app should be returning something different to the browser. And your only job was to orchestrate in your server the use of the module's logic, not the implementation of the logic.
+1. Run the app again with `node app.js`. Now your app should be returning something different to the browser.
+
+This is a common pattern in the JavaScript developer daily work: in a way to avoid reinventing the wheel, you can use open source libraries created by other devs like you. In this case, your only job was to orchestrate in your server the use of the module's logic, not the  `signBunny` logic implementation.
 
 In the next section, we will deploy our app to the cloud.
 
