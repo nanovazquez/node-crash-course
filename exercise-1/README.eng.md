@@ -1,6 +1,6 @@
 > **Note:** these are the instructions for the English version. If you want to see the instructions in spanish, go [here](./README.md).
 
-# Course 1: Node.js introduction & ecosystem - Exercise: Your first node deployment!
+# Class 1: Node.js introduction & ecosystem - Exercise: Your first node deployment!
 
 Welcome! Follow these instructions to create your first node app step by step and deploy it to the cloud.
 Alternatively, you can skip the app creation steps (first section) and and go directly to the Deployment section. Use the app under the `my-first-app` folder for this.

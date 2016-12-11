@@ -1,16 +1,16 @@
 > **Note:** these are the instructions for the Spanish version. If you want to see the instructions in english, go [here](./README.eng.md).
 
-# Class 2: Web app development - Exercise: Let's JS all the things!
+# Clase 2: Desarrollo de aplicaciones web - Ejercicio: Usemos JS para todo!
 
-In this class you will learn how to serve HTML static pages from a node web server. In addition, we will start writing some client-side code to turn our that static page in something more interesting. Finally, as always, we will deploy our newly created app.
+En esta clase vamos a aprender como "servir" páginas con contenido HTML estático desde un servidor Node. Luego, vamos a escribir algo de código del lado del cliente para convertir a nuestra página estática en algo más interesante. Finalmente, como siempre, vamos a publicar nuestra aplicación en la nube.
 
-Alternatively, you can skip the app creation steps and deploy the app under the `tinder` folder and go directly to the deployment section.
+Alternativamente, puedes omitir los pasos para crear la aplicación y publicar la aplicación dentro de la carpeta `tinder`. Si quieres hacer eso, puedes ir directamente a la sección de publicación.
 
-### Section 1: Your fist web app (static content)
+### Sección 1: Tu primer aplicación web (con contenido estático)
 
-1. Start by navigating to the `my-first-app` folder you created in the first class (under _../exercise-1_). Then, go to the **app.js** file.
+1. Comienza navegando a la carpeta `my-first-app` que creaste durante la primer clase (dentro de la carpeta _../exercise-1_). Luego, abre el archivo **app.js**.
 
-1. Update the code with the following lines:
+1. Actualiza el código dentro de este archivo con las siguientes líneas:
 
   ```
   var express = require('express');
@@ -27,36 +27,36 @@ Alternatively, you can skip the app creation steps and deploy the app under the 
   console.log('Server running at http://127.0.0.1:' + port);
   ```
 
-  We are doing 2 new things in this code:
+  Analicemos el código que acabamos de escribir. Notar que estamos haciendo 2 cosas nuevas:
 
-  * We serve all (static) files inside the `/public` folder
-  * When the website is being requested (`app.get('/')`), we return the index.html file
+  * En la tercer línea, le decimos a nuestro servidor web que "sirva" (devuelva) todos los archivos que se encuentran dentro de la carpeta **/public**.
+  * En la línea siguiente, le decimos a nuestro servidor web que cuando alguien navege a nuestro website (`app.get('/')`), éste debe responder con el contenido del archivo **index.html**.
 
-  Also, notice that we are using a different library this time named [Express](http://expressjs.com/). This is one of the most famous and used web application for Node.js and provides most of the things you will need today (and probably the next few months) out of the box. But before using it, you need to download it from NPM. For that, execute `npm install --save express`.
+  Además, esta ves estamos utilizando una nueva librería llamada [Express](http://expressjs.com/). Ésta es una de las librerías más famosas de Node.js para crear aplicaciones web, además de que provée muchas de las cosas que vamos a necesitar hoy (y que seguramente necesites en los próximos meses). Pero antes de utilizarla, tenemos que instalarla en nuestra aplicación utilizando NPM. Para ello, ejecuta `npm install --save express`.
 
-1. Now that our server knows how to send static content, we need to place the content itself. For that, create a new folder named **public** and copy the following files *./assets/index.html* and *./assets/index.css*.
+1. Ahora que nuestro server sabe como enviar contenido estático a los navegadores, sólo resta ubicar los archivos dentro de las carpetas correctas. Para ello, crearemos una carpeta llamada **public** y copiaremos los contenidos de los archivos **./assets/index.html** y **./assets/index.css** dentro de esta carpeta.
 
-1. Then, replace the content of the file with the text inside the _./assets/app.js_ file.
-
-1. Execute that code by using `node app.js`. Open a browser and navigate to http://127.0.0.1:8000/ to test it. You should see a tinder-ish app in your browser: it will show some pictures, a cellphone, but the buttons won't work. For that, let's go to the next section.
+1. Ejecutemos el código escribiendo `node app.js` en una terminal. Luego, abre un browser y navega a http://127.0.0.1:8000/ para probar el resultado. Deberías ver una applicación tipo tinder en tu browser: mostrará algunas fotos, un celular, pero los botones no funcionarán. Para hacerlos funcionar, vayamos a la siguiente sección.
 
 ### Section 2: Your fist web app (dynamic content)
 
-Now, it's time to add some functionality to the app! For this, we will remove the static HTML file and re-create it using JavaScript. For this, follow these steps:
+Ahora es momento de agregar algo de funcionalidad a la aplicación a la app! Para ello, removeremos el contenido HTML estático y lo recrearemos utilizando JavaScript del lado del ciente. Para ello, sigue estos pasos:
 
-1. Remove the static code inside the `<div id="people">` tag, but leave the tag! We are going to populate it with JS code.
+1. Abre el archivo **index.html** de tu aplicación (dentro de la carpeta **public**).
 
-1. Now, add the following line inside the `<head>` tag of the **index.html** file.
+1. Remueve el código estático dentro del tag `<div id="people">`, pero deja el tag! Vamos a rellenarlo utilizando código de JavaScript.
+
+1. Ahora, agrega la siguiente línea dentro del tag `<head>`:
 
   ```
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   ```
 
-1. Create a file named `index.js` under the **public** folder and paste the content inside the `./assets/public/index.js` file.
+1. Crea un archivo llamado **index.js** dentro de la carpeta **public** y pega el contenido que se encuentra dentro del archivo **./assets/public/index.js**.
 
-1. Now execute that code by using `node app.js`. Open a browser and navigate to http://127.0.0.1:8000/ to test it. You should see a better tinder-ish site in your browser.
+1. Ahora, levantemos nuestro server corriendo el comando `node app.js` en la terminal. Luego, abre un browser y navega nuevamente a http://127.0.0.1:8000/ para verificar el resultado.
 
-  *Voilà!* Easy right? Let's analize what the app does:
+  *Voilà!* Fácil no? Analicemos que hacemos dentro de nuestra aplicación:
 
   * We create a variable to store all the information of the people we are going to use.
   * We initialize an `App` and `Phone` variables, with some actions, like **Yes** or **No**.
