@@ -1,3 +1,5 @@
+> **Note:** these are the instructions for the Spanish version. If you want to see the instructions in english, go [here](./README.eng.md).
+
 # Clase 1: Introducción a Node.js y su ecosystem - Ejercicio: Tu primer deployment de Node!
 
 Bienvenido! En esta clase, aprenderemos a crear nuestra primer applicacion node siguiendo una serie de pasos sencillos.
@@ -27,7 +29,7 @@ Si estás familiarizado con node, puedes omitir la primer sección y deployar la
   console.log('Server running at http://127.0.0.1:' + port);
   ```
 
-  > **Note:** este código se ocupará, al ser ejecutado, de crear una aplicación Node.js básica que va a responder con el texto 'Hola FIUBA' a cada petición (request) recibida en localhost (o 127.0.0.1, o tu máquina), puerto 8000.
+  > **Nota:** este código se ocupará, al ser ejecutado, de crear una aplicación Node.js básica que va a responder con el texto 'Hola FIUBA' a cada petición (request) recibida en localhost (o 127.0.0.1, o tu máquina), puerto 8000.
 
 1. Ahora, ejecutamos el código en nuestra terminal corriendo el comando `node app.js`. Luego, abrimos un navegador (Chrome por ejemplo) y navegamos a la dirección http://127.0.0.1:8000. Si todo esta bien, debemos ver el mensaje `Hola FIUBA!`, el cual fue enviado por nuestra app de Node.js al navegador.
 
@@ -67,7 +69,7 @@ Instalemos un paquete sencillo para mejorar un poco a nuestro server:
 
 En la próxima sección, publicaremos la aplicación en la nube.
 
-### Section 2: Publicar la aplicación en la nube.
+### Sección 2: Publicar la aplicación en la nube.
 
 Para esta sección vamos a usar uno de los siguientes servicios de la nube:
 

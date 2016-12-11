@@ -1,23 +1,22 @@
+> **Note:** these are the instructions for the Spanish version. If you want to see the instructions in english, go [here](./README.eng.md).
+
 # Node.js crash-course
 
-This repository contains a set of short and simple exercises used in the [Node.js](https://nodejs.org/en/) course of the [FIUBA] (http://www.fi.uba.ar/) (Facultad de Ingeniería de la Universidad de Buenos Aires).
+Este repositorio contiene una serie de ejercicios cortos y simples que enseñan el uso de [Node.js](https://nodejs.org/en/), que fueron usado en el curso de [Node.js](https://nodejs.org/en/) de la [FIUBA] (http://www.fi.uba.ar/) (Facultad de Ingeniería de la Universidad de Buenos Aires).
 
+### Clases
 
-### Classes
+1. Clase 1: Introducción a Node.js y su ecosistema - Ejercicio: Tu primera publicación de node!
+2. Clase 2: Desarrollo de aplicaciones web - Ejercicio: Usemos JS para todo!
 
-1. Class 1: Node.js introduction & ecosystem - Exercise: Your first node deployment!
-2. Class 2: Web app development - Exercise: Let's JS all the things!
+### Requerimientos básicos
 
+* Tener [Node.js](https://nodejs.org/en/) instalado en tu máquina.
+* Tener [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) instalado en tu máquina.
+* Una cuenta en [GitHub](https://github.com/).
 
-### Basic Requirements
+## Cómo empezar
 
-* [Node.js](https://nodejs.org/en/) installed in your machine.
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed in your machine.
-* A [GitHub](https://github.com/) account.
-
-
-## Getting started
-
-1. Open the **exercise-1/README.md** file.
-2. Follow the steps.
-3. Enjoy.
+1. Abrí el archivo **exercise-1/README.md**.
+2. Seguí los pasos.
+3. Disfrutá.

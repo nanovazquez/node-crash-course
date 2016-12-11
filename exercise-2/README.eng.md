@@ -1,5 +1,3 @@
-> **Note:** these are the instructions for the Spanish version. If you want to see the instructions in english, go [here](./README.eng.md).
-
 # Class 2: Web app development - Exercise: Let's JS all the things!
 
 In this class you will learn how to serve HTML static pages from a node web server. In addition, we will start writing some client-side code to turn our that static page in something more interesting. Finally, as always, we will deploy our newly created app.
